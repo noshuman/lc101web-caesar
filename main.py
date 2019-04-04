@@ -1,6 +1,7 @@
-
-
-
+from flask import Flask
+from caesar import rotate_string
+app = Flask (__name__)
+app.config ['DEBUG'] = True
 
 
 form= """
@@ -28,13 +29,25 @@ form= """
 
 <body>
 <form method = "post">
-<input type= "text" name = "rot">
+<label>Rotation by:</label>
+<input type= "text" name= "rot" value= 0>
+<textarea type= "text" name= "text"></textarea>
+<input submit>
+
+<form method = "post">
+
 </body>
+
 </html>
 """
 
 @app.route ("/")
-def index()
-return form
+def index():
+  return form
 
-run app
+@app.route ("/")
+def encrypt():
+
+ 
+
+app.run()
